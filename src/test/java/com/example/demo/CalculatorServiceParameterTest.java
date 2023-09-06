@@ -20,9 +20,21 @@ public class CalculatorServiceParameterTest {
     @ParameterizedTest
     @MethodSource("parameters")
     void testPlus(double num1, double num2){
-        assertEquals(num1 + num2, service.plus(num1,num2));
-        assertEquals(num1 - num2, service.minus(num1,num2));
-        assertEquals(num1 * num2, service.multiply(num1,num2));
+        assertEquals(num1 + num2, service.plus(num1,num2));}
+
+        @ParameterizedTest
+        @MethodSource("parameters")
+        void testMinus(double num1, double num2){
+        assertEquals(num1 - num2, service.minus(num1,num2));}
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testMultiply(double num1, double num2){
+        assertEquals(num1 * num2, service.multiply(num1,num2));}
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testDivide(double num1, double num2){
         assertEquals(num1 / num2, service.divide(num1,num2));
     }
 }
